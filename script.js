@@ -68,3 +68,41 @@ searchButton.addEventListener("click", () => {
     curSelectedNav?.classList.remove("active");
     curSelectedNav = null;
 });
+
+function fetchNewsData(){
+    fetch(url)
+        .then(response => responce.json())
+        .then(data =>
+            {
+                displayNewsData(data.articles);
+            })
+        .catch(error =>{
+            console.error('Error fetching data:', error);
+        });
+}
+
+function displayNewsData(article){
+    const newsContainer = document.getElementById('news-container');
+
+    newsContainer.innerHTML = '';
+  
+  // Loop through articles and create elements to display them
+  articles.forEach(article => {
+    const articleElement = document.createElement('div');
+    articleElement.className = 'article';
+    
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = article.title;
+    
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = article.description;
+    
+    articleElement.appendChild(titleElement);
+    articleElement.appendChild(descriptionElement);
+    
+    newsContainer.appendChild(articleElement);
+  });
+}
+
+// Call the fetchNewsData function to retrieve and display news
+fetchNewsData();
