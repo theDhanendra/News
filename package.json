@@ -1,14 +1,11 @@
 {
   "name": "news",
   "version": "1.0.0",
-  "description": "News API project",
+  "description": "creating a News API project",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "package"
-  ],
   "author": "Dhanendra",
   "license": "ISC"
 }
